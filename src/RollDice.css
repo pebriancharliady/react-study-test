@@ -1,0 +1,80 @@
+@keyframes dots {
+	0% {
+		content: ' .';
+	}
+
+	50% {
+		content: ' ..';
+	}
+
+	100% {
+		content: ' ...';
+	}
+}
+
+@keyframes dieAnim {
+    0% {
+        transform: translateX(0);
+        transform: rotateZ(0);
+    }
+
+    25% {
+        transform: translateX(50px);
+    }
+
+    50%{
+        transform: translateX(-50px);
+        transform: rotateZ(50deg);
+    }
+
+    75%{
+        transform: translateX(50px);
+    }
+
+    90%{
+        transform: translateX(-50px);
+    }
+
+    100% {
+        transform: translateX(0);
+        transform: rotateZ(0);
+    }
+}
+
+.RollDice .RollDice-container{
+    display: flex;
+    justify-content: center;
+}
+
+.RollDice .RollDice-container .anim {
+    animation: dieAnim 1s ease-in-out;
+}
+
+.RollDice button {
+    border: 0;
+    padding: 1rem 2rem;
+    background-color: #00BCD4;
+    color: white;
+    font-weight: bold;
+    margin-top: 5rem;
+    font-size: 1.25rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+
+.RollDice button:disabled {
+    border: 0;
+    padding: 1rem 2rem;
+    background-color: #0d5c66;
+    color: white;
+    font-weight: bold;
+    margin-top: 5rem;
+    font-size: 1.25rem;
+    border-radius: 1rem;
+}
+
+.RollDice button:disabled::after {
+    content: '';
+    color: white;
+    animation: dots 1s infinite ease-in-out;
+}
